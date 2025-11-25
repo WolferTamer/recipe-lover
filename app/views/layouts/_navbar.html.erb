@@ -13,7 +13,7 @@
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <% if current_user %>
-          <%= link_to current_user.name, "", class: "px-3 py-2 text-sm font-medium text-gray-300" %>
+          <%= button_to current_user.name, destroy_user_session_path, method: :delete, class: "px-3 py-2 text-sm font-medium text-gray-300" %>
         <% else %>
           <%= link_to "Login", new_user_session_path, class: "px-3 py-2 text-sm font-medium text-gray-300" %>
           <%= link_to "Sign Up", new_user_registration_path, class: "px-3 py-2 text-sm font-medium text-gray-300" %>
