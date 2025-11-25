@@ -7,7 +7,10 @@
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-            <%= link_to "Home", "/", class: class_names("rounded-md px-3 py-2 text-sm font-medium", {"text-white bg-gray-950/50": request.path == "/", "text-gray-300 hover:bg-white/5 hover:text-white": request.path != "/"}) %>
+            <%= link_to "Home", root_path, class: class_names("rounded-md px-3 py-2 text-sm font-medium", {"text-white bg-gray-950/50": request.path == "/", "text-gray-300 hover:bg-white/5 hover:text-white": request.path != "/"}) %>
+            <% if current_user %>
+              <%= link_to "My Recipies", recipes_path, class: class_names("rounded-md px-3 py-2 text-sm font-medium", {"text-white bg-gray-950/50": request.path == "/", "text-gray-300 hover:bg-white/5 hover:text-white": request.path != "/"}) %>
+            <% end %>
           </div>
         </div>
       </div>

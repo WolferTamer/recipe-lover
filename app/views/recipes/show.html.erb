@@ -1,0 +1,7 @@
+<div>
+  <%= render @recipe %>
+  <div class="mt-3 flex justify-start align-center">
+    <%= render 'recipes/add' %>
+    <%= link_to "Edit", edit_recipe_path, class: "ml-3 bg-green-300 text-gray-900 rounded-lg p-2 text-sm" %>
+  </div>
+</div>
